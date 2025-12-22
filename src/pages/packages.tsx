@@ -1,7 +1,7 @@
 import React from 'react';
 import 'antd/dist/reset.css';
 import Footer from '@/components/Footer';
-import { ThemeMode, ThemeProvider as _ThemeProvider } from 'antd-style';
+import { ThemeMode, ThemeProvider } from 'antd-style';
 import Header from '@/components/Header';
 import { useTheme } from '@/hooks/useTheme';
 import { useRouter } from 'next/router';
@@ -11,7 +11,6 @@ import { SearchItem, useCachedSearch } from '@/hooks/useSearch';
 import { Col, Empty, Pagination, Row, Space } from 'antd';
 import { PackageCard } from '@/components/PackageCard';
 
-const ThemeProvider = _ThemeProvider as any;
 
 type PageType = {
   page: number;

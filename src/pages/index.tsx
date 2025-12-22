@@ -8,7 +8,8 @@ import Introduce from '@/components/Introduce';
 import Header from '@/components/Header';
 import { useTheme } from '@/hooks/useTheme';
 import RecentTrending from '@/components/RecentTrending';
-import { ConfigProvider, Flex, theme } from 'antd';
+import { Flex } from 'antd';
+import { ThemeProvider } from 'antd-style';
 import SizeContainer from '@/components/SizeContainer';
 import AdHire from '@/components/AdHire';
 
@@ -16,9 +17,7 @@ export default function Home() {
   const [themeMode, setThemeMode] = useTheme();
 
   return (
-    <ConfigProvider
-      theme={{ algorithm: themeMode === 'dark' ? theme.darkAlgorithm : theme.defaultAlgorithm }}
-    >
+    <ThemeProvider themeMode={themeMode} onThemeModeChange={setThemeMode}>
       <AdHire />
       <Header themeMode={themeMode} setThemeMode={setThemeMode} />
       <main className={styles.main}>
@@ -35,6 +34,6 @@ export default function Home() {
         </SizeContainer>
       </main>
       <Footer />
-    </ConfigProvider>
+    </ThemeProvider>
   );
 }

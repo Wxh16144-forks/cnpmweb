@@ -21,5 +21,5 @@ export function useTheme() {
       localStorage.setItem(LOCAL_STORAGE_THEME, v);
       setThemeMode(v);
     },
-  ];
+  ] as const;
 }
